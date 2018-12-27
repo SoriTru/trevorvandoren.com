@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/tictactoe/static/css/main.419d9e81.chunk.css"
   },
   {
-    "revision": "ff4555de85a8c8de2cfc0e2c21b6da0f",
+    "revision": "048d4378f21bf58650ecf82b096d9785",
     "url": "/tictactoe/index.html"
   }
 ];
