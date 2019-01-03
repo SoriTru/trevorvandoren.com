@@ -1,4 +1,34 @@
-.outline{
-    border: medium solid;
-    align-items: center;
+.outline {
+  border: medium solid;
+  align-items: center;
+}
+
+.my-header {
+  font-family: "Times New Roman", Times, serif;
+  text-align: left;
+  font-style: italic;
+  background-color: rgb(50, 54, 51);
+  color: rgb(204, 199, 199);
+  border-radius: 0px;
+  width: 100%;
+  padding: 10px 30px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+  .my-header {
+    text-align: center;
+  }
+}
+
+.button-format {
+  background-color: white;
+  padding: 5px;
+  margin: 0px;
+  border-radius: 12px;
+  border: 1px solid #999;
+}
+
+.column-margins {
+  margin-bottom: 15px;
 }
