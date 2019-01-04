@@ -32,3 +32,26 @@
 .column-margins {
   margin-bottom: 15px;
 }
+
+.padding-0 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: rgb(50, 54, 51);
+  border-color: rgb(50, 54, 51);
+  color: rgb(204, 199, 199);
+}
+.justify-right {
+  text-align: right;
+  padding-right: 30px;
+  margin-right: 0px;
+}
+
+.full-width {
+  width: 100%;
+}
