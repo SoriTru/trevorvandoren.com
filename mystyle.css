@@ -15,8 +15,16 @@
   margin-bottom: 30px;
 }
 
+.my-paragraph {
+  text-align: center;
+}
 @media (max-width: 600px) {
   .my-header {
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+  .justify-right {
     text-align: center;
   }
 }
