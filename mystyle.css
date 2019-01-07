@@ -10,7 +10,6 @@
   background-color: rgb(50, 54, 51);
   color: rgb(204, 199, 199);
   border-radius: 0px;
-  width: 100%;
   padding: 10px 30px;
   margin-bottom: 30px;
 }
@@ -18,14 +17,23 @@
 .my-paragraph {
   text-align: center;
 }
+
+.button-align {
+  text-align: right;
+  padding-right: 30px;
+  margin-right: 0px;
+}
+
 @media (max-width: 600px) {
   .my-header {
     text-align: center;
     margin-bottom: 0px;
   }
 
-  .justify-right {
+  .button-align {
     text-align: center;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
@@ -53,11 +61,6 @@
   background-color: rgb(50, 54, 51);
   border-color: rgb(50, 54, 51);
   color: rgb(204, 199, 199);
-}
-.justify-right {
-  text-align: right;
-  padding-right: 30px;
-  margin-right: 0px;
 }
 
 .full-width {
