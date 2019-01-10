@@ -14,35 +14,40 @@
   margin-bottom: 30px;
 }
 
+.row {
+  margin-right: 0;
+}
+
+.button-format {
+  background-color: rgb(50, 54, 51);
+  color: rgb(204, 199, 199);
+}
+
+.button-width {
+  width: 10px;
+}
+
+.btn:hover {
+  background-color: rgb(100, 100, 100);
+  color: rgb(204, 199, 199);
+}
+
 .my-paragraph {
   text-align: center;
 }
 
+.link-color {
+  color: rgb(204, 199, 199);
+}
+
+.link-color:hover {
+  color: rgb(204, 199, 199);
+}
+
 .button-align {
   text-align: right;
-  padding-right: 30px;
+  padding-right: 0px;
   margin-right: 0px;
-}
-
-@media (max-width: 600px) {
-  .my-header {
-    text-align: center;
-    margin-bottom: 0px;
-  }
-
-  .button-align {
-    text-align: center;
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-
-.button-format {
-  background-color: white;
-  padding: 5px;
-  margin: 0px;
-  border-radius: 12px;
-  border: 1px solid #999;
 }
 
 .column-margins {
@@ -65,4 +70,28 @@
 
 .full-width {
   width: 100%;
+}
+
+.button-space {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+@media (max-width: 750px) {
+  .button-space {
+    padding: 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  .my-header {
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+  .button-align {
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
