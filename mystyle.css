@@ -1,97 +1,54 @@
-.outline {
-  border: medium solid;
-  align-items: center;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  color: #222222;
+  background-color: rgb(231, 231, 231);
 }
 
-.my-header {
-  font-family: "Times New Roman", Times, serif;
-  text-align: left;
-  font-style: italic;
-  background-color: rgb(50, 54, 51);
-  color: rgb(204, 199, 199);
-  border-radius: 0px;
-  padding: 10px 30px;
-  margin-bottom: 30px;
+.navbar {
+  padding: 0.8rem;
 }
 
-.row {
-  margin-right: 0;
+.navbar-brand {
+  font-size: 125%;
+}
+.navbar-nav li {
+  padding-right: 20px;
 }
 
-.button-format {
-  background-color: rgb(50, 54, 51);
-  color: rgb(204, 199, 199);
+.nav-link {
+  font-size: 1.1em !important;
 }
 
-.button-width {
-  width: 10px;
-}
-
-.btn:hover {
-  background-color: rgb(100, 100, 100);
-  color: rgb(204, 199, 199);
-}
-
-.my-paragraph {
+.title-image {
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
-.link-color {
-  color: rgb(204, 199, 199);
+.welcome {
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 30px;
 }
 
-.link-color:hover {
-  color: rgb(204, 199, 199);
+.welcome hr {
+  border-top: 2px solid #b4b4b4;
+  width: 95%;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
 }
 
-.button-align {
-  text-align: right;
-  padding-right: 0px;
-  margin-right: 0px;
-}
-
-.column-margins {
-  margin-bottom: 15px;
-}
-
-.padding-0 {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:visited {
-  background-color: rgb(50, 54, 51);
-  border-color: rgb(50, 54, 51);
-  color: rgb(204, 199, 199);
-}
-
-.full-width {
+.inconspicuous {
+  font-size: 75%;
   width: 100%;
+  background-color: transparent;
+  border-color: transparent;
 }
 
-.button-space {
-  padding-right: 40px;
-  padding-left: 40px;
-}
-
-@media (max-width: 750px) {
-  .button-space {
-    padding: 0px;
-  }
-}
-
-@media (max-width: 600px) {
-  .my-header {
-    text-align: center;
-    margin-bottom: 0px;
-  }
-
-  .button-align {
-    text-align: center;
-    padding-right: 0;
-    padding-left: 0;
-  }
+hr.light {
+  border-top: 1px solid #b4b4b4;
+  width: 100%;
 }

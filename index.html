@@ -14,105 +14,100 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="mystyle.css" />
   </head>
   <body>
-    <div>
-      <div class="row my-header">
-        <div class="col-sm-6 padding-0">
-          <div class="full-width button-space"><h2>Trevor VanDoren</h2></div>
+    <!--- Navigation bar-->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://trevorvandoren.com"
+          >Trevor VanDoren</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Projects</a>
+            </li>
+          </ul>
         </div>
-        <div class="col-sm-6 button-align full-width padding-0">
-          <div class="btn-group button-space">
-            <div class="btn-group">
-              <button
-                type="button"
-                class="btn btn-primary dropdown-toggle"
-                data-toggle="dropdown"
-              >
-                About<span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu button-format" role="menu">
-                <li>
-                  <button class="btn dropdown-item">
-                    <a class="link-color" href="#">Bio</a>
-                  </button>
-                </li>
-                <li>
-                  <button class="btn dropdown-item">
-                    <a class="link-color" href="#">Resume</a>
-                  </button>
-                </li>
-                <li>
-                  <button class="btn dropdown-item">
-                    <a
-                      class="link-color"
-                      href="https://www.linkedin.com/in/tvandoren"
-                      >LinkedIn</a
-                    >
-                  </button>
-                </li>
-                <li>
-                  <button class="btn dropdown-item">
-                    <a class="link-color" href="https://github.com/soritru"
-                      >GitHub</a
-                    >
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div class="btn-group">
-              <button
-                type="button"
-                class="btn btn-primary dropdown-toggle"
-                data-toggle="dropdown"
-              >
-                Games<span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu button-format" role="menu">
-                <button class="btn dropdown-item">
-                  <li>
-                    <a
-                      class="link-color"
-                      href="https://trevorvandoren.com/tictactoe"
-                      >TicTacToe</a
-                    >
-                  </li>
-                </button>
-              </ul>
-            </div>
-            <div class="btn-group">
-              <button
-                type="button"
-                class="btn btn-primary dropdown-toggle"
-                data-toggle="dropdown"
-              >
-                Things<span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu button-format" role="menu">
-                <button class="btn dropdown-item">
-                  <li>
-                    <a class="link-color" href="https://xkcd.com">XKCD</a>
-                  </li>
-                </button>
-                <button class="btn dropdown-item">
-                  <li>
-                    <a class="link-color" href="https://projecteuler.net"
-                      >Project Euler</a
-                    >
-                  </li>
-                </button>
-              </ul>
-            </div>
+      </div>
+    </nav>
+    <!--- Image -->
+    <div class="container-fluid title-image">
+      <img src="img/background.jpg" alt="Austria" style="width:100%;" />
+    </div>
+    <!--- Welcome -->
+    <div class="container-fluid padding">
+      <div class="row welcome text-center">
+        <div class="col-12">
+          <h1 class="display-4">Welcome title</h1>
+          <hr />
+          <div class="col-12">
+            <p class="lead">This is some text that says stuff</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
-      <p class="my-paragraph">
-        Madi is the most beautiful woman in the world! I love her so, so much!
-      </p>
+    <!--- Misc Info -->
+    <div class="container-fluid padding">
+      <div class="row text-center justify-content-center padding">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <h3>STUFF</h3>
+          <p>Words, words, words.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <h3>OTHER</h3>
+          <p>More text (it continues)!</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <h3>LAST</h3>
+          <p>Here is a sentence.</p>
+        </div>
+      </div>
     </div>
+    <!--- Footer -->
+    <footer>
+      <div class="container-fluid padding">
+        <div class="row text-center">
+          <div class="col-12">
+            <hr class="light" />
+            <div id="hidden-text" class="collapse">
+              <div class="container-fluid padding">
+                <p class="text-center">
+                  Madi is the most beautiful woman in the world! I love her so,
+                  so much!
+                </p>
+              </div>
+            </div>
+            <button
+              class="inconspicuous"
+              data-toggle="collapse"
+              data-target="#hidden-text"
+            >
+              <h5>&copy; 2019</h5>
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -130,3 +125,6 @@
     ></script>
   </body>
 </html>
+
+<!-- Special thanks to Drew Brian and his bootstrap tutorial video on Youtube! -->
+<!-- (https://www.youtube.com/watch?v=9cKsq14Kfsw) -->
