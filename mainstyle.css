@@ -1,3 +1,19 @@
+.about-style {
+  padding-top: 20px;
+  width: 75%;
+}
+
+.fa {
+  color: #2b2b2b;
+  font-size: 150%;
+  padding: 10px;
+}
+
+hr.light {
+  border-top: 1px solid #b4b4b4;
+  width: 100%;
+}
+
 html,
 body {
   height: 100%;
@@ -5,6 +21,17 @@ body {
   font-family: "Roboto", sans-serif;
   color: #222222;
   background-color: #f8f9fa;
+}
+
+.inconspicuous {
+  font-size: 75%;
+  width: 100%;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.information {
+  padding-top: 30px;
 }
 
 .navbar {
@@ -21,6 +48,16 @@ body {
 
 .nav-link {
   font-size: 1.1em !important;
+}
+
+.partial-width {
+  width: 75%;
+}
+
+.profile-image {
+  width: 20%;
+  padding: 20px;
+  border-radius: 50%;
 }
 
 .title-image {
@@ -40,22 +77,6 @@ body {
   width: 95%;
   margin-top: 0.3rem;
   margin-bottom: 1rem;
-}
-
-.information {
-  padding-top: 30px;
-}
-
-.inconspicuous {
-  font-size: 75%;
-  width: 100%;
-  background-color: transparent;
-  border-color: transparent;
-}
-
-hr.light {
-  border-top: 1px solid #b4b4b4;
-  width: 100%;
 }
 
 /*---- Media Queries ----*/
