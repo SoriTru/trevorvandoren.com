@@ -55,6 +55,10 @@ body {
   font-size: 1.1em !important;
 }
 
+.no-headspace {
+  margin-top: 0;
+}
+
 .profile-image {
   width: 250px;
   padding: 20px;
@@ -62,15 +66,21 @@ body {
 }
 
 .title-image {
+  border-radius: 50%;
   margin: 0;
   padding: 0;
   text-align: center;
+  width: 35%;
+}
+
+.title-text {
+  font-weight: 500;
 }
 
 .welcome {
   width: 75%;
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 .welcome hr {
@@ -81,6 +91,12 @@ body {
 }
 
 /*---- Media Queries ----*/
+@media (max-width: 992px) {
+  .title-image {
+    width: 45%;
+  }
+}
+
 @media (max-width: 768px) {
   .about-style {
     width: 90%;
@@ -88,6 +104,10 @@ body {
 
   .about-text {
     font-size: 175%;
+  }
+
+  .title-image {
+    width: 60%;
   }
 }
 
@@ -97,6 +117,20 @@ body {
   }
 
   .about-text {
+    font-size: 150%;
+  }
+
+  .title-image {
+    width: 75%;
+  }
+
+  .title-text {
+    font-size: 175%;
+  }
+}
+
+@media (max-width: 420px) {
+  .title-text {
     font-size: 150%;
   }
 }
