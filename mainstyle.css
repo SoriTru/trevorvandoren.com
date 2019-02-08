@@ -134,4 +134,8 @@ body {
   .title-text {
     font-size: 200%;
   }
+
+  .welcome {
+    width: 90%;
+  }
 }
