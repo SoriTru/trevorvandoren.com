@@ -95,6 +95,7 @@ body {
   width: 75%;
   margin: 0 auto;
   padding-top: 10px;
+  text-align: center;
 }
 
 .welcome hr {
@@ -136,6 +137,6 @@ body {
   }
 
   .welcome {
-    width: 90%;
+    width: 100%;
   }
 }
