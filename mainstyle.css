@@ -14,6 +14,11 @@
   padding: 10px;
 }
 
+.full-width {
+  width: 100%;
+  background-color: white;
+}
+
 hr.light {
   border-top: 1px solid #b4b4b4;
   width: 100%;
@@ -35,7 +40,8 @@ body {
   border-color: transparent;
 }
 
-.information {
+.info-text {
+  font-size: 150%;
   padding-top: 30px;
 }
 
@@ -65,12 +71,20 @@ body {
   border-radius: 50%;
 }
 
+.subinfo-text {
+  font-size: 100%;
+}
+
+.subtitle-text {
+  font-size: 120%;
+}
+
 .title-image {
-  border-radius: 50%;
   margin: 0;
   padding: 0;
   text-align: center;
-  width: 35%;
+  width: 100%;
+  opacity: 1;
 }
 
 .title-text {
@@ -92,9 +106,6 @@ body {
 
 /*---- Media Queries ----*/
 @media (max-width: 992px) {
-  .title-image {
-    width: 45%;
-  }
 }
 
 @media (max-width: 768px) {
@@ -104,10 +115,6 @@ body {
 
   .about-text {
     font-size: 175%;
-  }
-
-  .title-image {
-    width: 60%;
   }
 }
 
@@ -120,17 +127,19 @@ body {
     font-size: 150%;
   }
 
-  .title-image {
-    width: 75%;
+  .info-text {
+    font-size: 140%;
+  }
+
+  .subinfo-text {
+    font-size: 90%;
+  }
+
+  .subtitle-text {
+    font-size: 110%;
   }
 
   .title-text {
-    font-size: 175%;
-  }
-}
-
-@media (max-width: 420px) {
-  .title-text {
-    font-size: 150%;
+    font-size: 200%;
   }
 }
