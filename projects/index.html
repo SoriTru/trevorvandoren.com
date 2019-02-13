@@ -18,14 +18,20 @@
       href="https://fonts.googleapis.com/css?family=Roboto:300"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="mainstyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../mainstyle.css" />
   </head>
   <body>
     <!--- Navigation bar-->
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
       <div class="container-fluid">
         <!---change link to redirect home on other pages-->
-        <a class="navbar-brand" href="#">Trevor VanDoren</a>
+        <a class="navbar-brand" href="https://trevorvandoren.com"
+          >Trevor VanDoren</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -37,47 +43,56 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="https://trevorvandoren.com/about"
-                >About</a
-              >
+              <a class="nav-link" href="https://trevorvandoren.com">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://trevorvandoren.com/projects"
-                >Projects</a
-              >
+              <a class="nav-link" href="#">About</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <!--- Image -->
-    <div class="full-width">
-      <img src="img/background.jpg" alt="Austria" class="title-image" />
+    <div class="container-fluid">
+      <hr class="light no-headspace projects" />
     </div>
-    <!--- Welcome -->
-    <div class="container-fluid padding">
-      <div class="row welcome">
-        <div class="col-12">
-          <h1 class="title-text">Trevor VanDoren</h1>
-          <hr />
-          <div class="col-12">
-            <p class="subtitle-text">
-              viewing development from a fresh perspective
-            </p>
-          </div>
+    <!--- Projects -->
+    <div class="container-fluid">
+      <div class="row about-style">
+        <div class="col-12 text-center">
+          <h3 class="projects-text">
+            Projects
+          </h3>
         </div>
       </div>
-    </div>
-    <!--- Misc Info -->
-    <div class="container-fluid padding">
-      <div class="row text-center justify-content-center padding">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <h3 class="info-text">WEB</h3>
-          <p class="subinfo-text">Bootstrap, CSS, HTML</p>
+      <div class="row justify-content-center">
+        <div class="col-xs-4 col-sm-6 col-md-4">
+          <div class="projects-gallery">
+            <!--- all images should have the same vertical and horizontal dimensions -->
+            <h5>
+              This website!
+            </h5>
+            <a target="_blank" href="https://trevorvandoren.com"
+              ><img src="../img/profile.jpeg" />
+            </a>
+            <div class="projects-description">
+              Source code <a href="https://github.com/SoriTru/website">here</a>.
+            </div>
+          </div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <h3 class="info-text">SOFTWARE</h3>
-          <p class="subinfo-text">Java, C</p>
+        <div class="col-xs-4 col-sm-6 col-md-4">
+          <div class="projects-gallery">
+            <h5>
+              Other Website
+            </h5>
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              ><img src="../img/test.jpg" />
+            </a>
+            <div class="projects-description">
+              Source code not publicly available.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -123,6 +138,3 @@
     ></script>
   </body>
 </html>
-
-<!-- Special thanks to Drew Brian and his bootstrap tutorial video on Youtube! -->
-<!-- (https://www.youtube.com/watch?v=9cKsq14Kfsw) -->
