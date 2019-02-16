@@ -33,6 +33,10 @@ body {
   background-color: #f8f9fa;
 }
 
+.headspace {
+  margin-top: 10px;
+}
+
 .inconspicuous {
   font-size: 75%;
   width: 100%;
@@ -76,8 +80,8 @@ body {
 }
 
 .projects-description {
-  padding: 15px;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .projects-gallery {
