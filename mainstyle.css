@@ -107,6 +107,10 @@ body {
   border: 2px solid #666666;
 }
 
+.projects-text {
+  margin-bottom: 25px;
+}
+
 .subinfo-text {
   font-size: 100%;
 }
