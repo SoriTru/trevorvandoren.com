@@ -165,7 +165,8 @@ body {
   }
 
   .about-text {
-    font-size: 150%;
+    font-size: 140%;
+    margin-bottom: 20px;
   }
 
   .info-text {
