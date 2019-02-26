@@ -189,3 +189,13 @@ body {
     width: 100%;
   }
 }
+
+@media (max-width: 330px) {
+  .about-text {
+    font-size: 100%;
+  }
+
+  .about-paragraph {
+    font-size: 80%;
+  }
+}
