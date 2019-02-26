@@ -1,3 +1,7 @@
+.about-paragraph {
+  text-align: left;
+  font-size: large;
+}
 .about-style {
   width: 60%;
   margin: 0 auto;
@@ -39,7 +43,7 @@ body {
 
 .inconspicuous {
   font-size: 75%;
-  width: 100%;
+  width: 50%;
   background-color: transparent;
   border-color: transparent;
 }
@@ -160,6 +164,10 @@ body {
 }
 
 @media (max-width: 576px) {
+  .about-paragraph {
+    font-size: medium;
+  }
+
   .about-style {
     width: 100%;
   }
