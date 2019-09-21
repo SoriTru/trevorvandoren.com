@@ -44,11 +44,11 @@ input {
 }
 
 @media (max-width: 768px) {
+  input {
+    width: 75%;
+  }
   .weather-panel {
     width: 100%;
-  }
-  .input {
-    width: 75%;
   }
   .weather-submit {
     width: 75%;
