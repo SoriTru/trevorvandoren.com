@@ -28,7 +28,7 @@ function historyLog(location) {
 function getWeather(location, log_data) {
   let apiKey = "WUAq8drkrG0l537D2VfW9yFGeb4lq8O2";
   let locationUrl =
-    "http://dataservice.accuweather.com/locations/v1/search?apikey=" +
+    "https://dataservice.accuweather.com/locations/v1/search?apikey=" +
     apiKey +
     "&q=" +
     location;
@@ -65,7 +65,7 @@ function getWeather(location, log_data) {
 
       // current weather data
       let currentWeatherUrl =
-        "http://dataservice.accuweather.com/currentconditions/v1/search?apikey=" +
+        "https://dataservice.accuweather.com/currentconditions/v1/search?apikey=" +
         apiKey +
         "&locationkey=" +
         locationData.Key;
@@ -80,7 +80,7 @@ function getWeather(location, log_data) {
 
         // daily weather data
         let weatherUrl =
-          "http://dataservice.accuweather.com/forecasts/v1/daily/1day/search?apikey=" +
+          "https://dataservice.accuweather.com/forecasts/v1/daily/1day/search?apikey=" +
           apiKey +
           "&locationkey=" +
           locationData.Key;
