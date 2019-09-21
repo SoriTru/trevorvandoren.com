@@ -1,0 +1,44 @@
+* {
+  background-color: white;
+  box-sizing: border-box;
+  color: #222222;
+}
+
+input {
+  border-radius: 4px;
+  text-align: center;
+  font-size: medium;
+  width: 50%;
+}
+
+.weather-submit {
+  width: 50%;
+  text-align: center;
+  font-size: medium;
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.weather-panel {
+  width: 75%;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.weather-search {
+  text-align: center;
+  padding: 5px;
+}
+
+.info-panel {
+  width: 100%;
+  background-color: transparent;
+  display: block;
+  text-align: center;
+  box-shadow: inset 0 0 2px #000;
+}
+
+.row {
+  display: flex;
+}

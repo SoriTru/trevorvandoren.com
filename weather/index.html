@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Project 3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="weather-panel">
+      <div class="weather-search">
+        <input
+          type="text"
+          id="location"
+          placeholder="Enter a city, state, or zip code"
+        /><br />
+        <select
+          id="search-history"
+          onchange="getWeather(this.options[this.selectedIndex].value, false)"
+        ></select>
+        <br />
+        <button
+          class="weather-submit"
+          id="submit-button"
+          onclick="getWeather(document.getElementById('location').value, true)"
+        >
+          Get Weather
+        </button>
+      </div>
+      <div class="info-panel" id="info"></div>
+      <div class="info-panel" style="font-size: small" id="info-alert"></div>
+      <div style="text-align: center; font-size: small">
+        Provided by<br />
+        <img href="https://accuweather.com" src="../img/accuweatherLogo.jpeg" />
+      </div>
+    </div>
+    <script src="functions.js"></script>
+    <script>
+      // ties Enter key to weather submit button
+      let input = document.getElementById("location");
+      input.addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("submit-button").click();
+        }
+      });
+    </script>
+  </body>
+</html>
