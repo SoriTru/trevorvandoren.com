@@ -15,6 +15,8 @@ class PostHandler(BaseHTTPRequestHandler):
                          'CONTENT_TYPE': self.headers['CONTENT-TYPE']
                          })
 
+            print(form)
+
             name = form["name"].value
             phone = form["phone"].value
             email = form["email"].value
@@ -22,9 +24,9 @@ class PostHandler(BaseHTTPRequestHandler):
 
             os.system(f"sh send_form.sh {name} {phone} {email} {message}")
 
-            self.send_response(200)
+            self.send_response(302)
+            self.send_header("Location", "https://trevorvandoren.com/#form")
             self.end_headers()
-            self.wfile.write("Thanks!")
             return
 
 
