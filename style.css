@@ -101,3 +101,10 @@ textarea {
   padding: 20px;
   border-radius: 50%;
 }
+
+.gutter-image {
+  width: 75%;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 50%;
+}
