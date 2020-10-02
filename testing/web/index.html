@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script type="text/javascript" src="./scripts/hamburger-menu.js"></script>
+    <!-- TODO: correct name once it's decided on -->
+    <title>IM Rework</title>
+  </head>
+  <body>
+    <nav
+      class="navbar has-shadow"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://free-document-generator.com">
+          <!-- TODO: correct name once it's decided on -->
+          <strong>Insert Name</strong>
+        </a>
+        <a
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbar-menu"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbar-menu" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                class="button is-light"
+              >
+                Log in
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="container ">
+        <div class="columns is-centered">
+          <div class="column is-one-third">
+            <div class="box">
+              <h1 class="title has-text-centered">Sign up</h1>
+              <div class="field">
+                <label class="label">Username</label>
+                <div class="control">
+                  <input
+                    id="username"
+                    class="input"
+                    type="text"
+                    placeholder="e.g. LeroyJenkins"
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                  <input
+                    id="password"
+                    class="input"
+                    type="password"
+                    placeholder="Text input"
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Confirm Password</label>
+                <div class="control">
+                  <input
+                    id="confirm-password"
+                    class="input"
+                    type="password"
+                    placeholder="Text input"
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <label class="checkbox">
+                    <input type="checkbox" />
+                    <!-- TODO: create terms and conditions -->
+                    I agree to the <a href="#">terms and conditions</a>
+                  </label>
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <button class="button is-link">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBHIHX8IdRgsvJJWoFIy7tBS7TpC-Sn71w",
+        authDomain: "im-rework.firebaseapp.com",
+        databaseURL: "https://im-rework.firebaseio.com",
+        projectId: "im-rework",
+        storageBucket: "im-rework.appspot.com",
+        messagingSenderId: "954513286314",
+        appId: "1:954513286314:web:cca4a9064e97a1b5625cd3"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  </body>
+</html>
