@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <!-- TODO: correct name once it's decided on -->
+    <title>IM Rework</title>
+  </head>
+
+  <body>
+    <nav
+      class="navbar has-shadow"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <!-- TODO: make link point to home page -->
+        <a class="navbar-item" href="#">
+          <!-- TODO: correct name once it's decided on -->
+          <strong>Name/Logo</strong>
+        </a>
+
+        <!-- TODO: link img to current user's avi pic-->
+        <!--        <figure class="image is-48x48">-->
+        <!--          <img class="is-rounded" src="#" />-->
+        <!--        </figure>-->
+
+        <a
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbar-menu"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbar-menu" class="navbar-menu">
+        <div class="navbar-end">
+          <!-- navigation dropdown -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> Pages </a>
+            <div class="navbar-dropdown">
+              <a href="../school-page/index.html" class="navbar-item">
+                School
+              </a>
+              <a href="../league-page/index.html" class="navbar-item">
+                League
+              </a>
+            </div>
+          </div>
+
+          <div class="navbar-item">
+            <div class="buttons">
+              <button
+                id="sign-in-toggle"
+                class="button is-light"
+                onclick="toggleLogIn()"
+              >
+                Log in
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+      <div class="container"></div>
+    </section>
+    <script type="text/javascript" src="../scripts/hamburger-menu.js"></script>
+  </body>
+</html>

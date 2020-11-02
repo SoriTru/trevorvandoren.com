@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/debug.css" />
+    <!-- TODO: correct name once it's decided on -->
+    <title>IM Rework</title>
+  </head>
+  <body>
+    <nav
+      class="navbar has-shadow"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <!-- TODO: make link point to home page -->
+        <a class="navbar-item" href="#">
+          <!-- TODO: correct name once it's decided on -->
+          <strong>Insert Name</strong>
+        </a>
+        <a
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbar-menu"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbar-menu" class="navbar-menu">
+        <div class="navbar-end">
+          <!-- navigation dropdown -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> Pages </a>
+            <div class="navbar-dropdown">
+              <a href="../league-page/index.html" class="navbar-item">
+                League
+              </a>
+              <a href="../profile-page/index.html" class="navbar-item">
+                Profile
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item">
+            <div class="buttons">
+              <button
+                id="sign-in-toggle"
+                class="button is-light"
+                onclick="toggleLogIn()"
+              >
+                Log in
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="container">
+        <!-- TODO: put your code here! Ask Trevor if you need help with anything -->
+
+        <!--School Specific Name/Logo box  and info box starts here-->
+        <section class="hero is-info mb-5">
+          <!-- So what you can do here instead of the inline style thing is add the bulma "has-text-centered" tag.
+           There are a lot of helpers like this as well. If you find that you do need to tweak styles in ways
+           that Bulma doesn't account for, you can go ahead and do it in the style section, or ask me and I can show
+           you how to set up a CSS file, which makes it a lot cleaner and easier.
+           -Trevor
+           -->
+          <div class="hero-body">
+            <h1 class="title has-text-centered">School Specific Name</h1>
+            <h2 class="subtitle has-text-centered">School Specific Logo</h2>
+          </div>
+        </section>
+        <section class="container has-backgrpund-light">
+          <div class="columns is-gapless">
+            <div class="column">
+              <div class="notification has-text-left is-primary content">
+                <ul>
+                  <li>
+                    This could be a spot where schools could have announcements
+                  </li>
+                  <li>Things about tounaments</li>
+                  <li>
+                    Probably contact info for school employee heading this up
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div class="notification has-text-left is-primary content">
+                <ul>
+                  <li>Or whatever else</li>
+                  <li>
+                    We'd need to define maybe two boxes here, one on either side
+                  </li>
+                  <li>
+                    Later on we can add Javascript to make them editable by
+                    users
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--School Specific Name/Logo box  and info box ends here-->
+        <div class="hero">
+          <div class="hero-body">
+            <h1 class="title has-text-centered"></h1>
+          </div>
+        </div>
+
+        <!-- School Leagus Begins Here-->
+        <section class="hero is-danger">
+          <div class="hero-body">
+            <h1 class="title has-text-centered">School Leagues</h1>
+          </div>
+        </section>
+        <section class="container has-background-dark mb-5">
+          <div class="columns">
+            <div class="column">
+              <div
+                class="notification has-background-dark has-text-white content"
+              >
+                <h1 class="has-text-white has-background-dark content">
+                  League 1
+                </h1>
+                <ul>
+                  <li>Active Dates</li>
+                  <li>Team Size Requirements</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div
+                class="notification has-background-dark has-text-white content"
+              >
+                <nav class="buttons is-right">
+                  <button class="button is-danger is-rounded">
+                    <i class="fas fa-align-right"></i>
+                    <span>League Page</span>
+                  </button>
+                </nav>
+                <ul>
+                  <li>Registration Deadline</li>
+                  <li>
+                    Two columns defined, but need to format button to wrap text
+                    properly
+                  </li>
+                  <li>
+                    Later on we can add Javascript to make them editable by
+                    users
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="container has-background-grey mb-5">
+          <div class="columns">
+            <div class="column">
+              <div
+                class="notification has-text-left has-background-grey content"
+              >
+                <h1 class="has-text-white is-grey content">League 2</h1>
+                <ul class="has-text-white">
+                  <li>Active Dates</li>
+                  <li>Team Size Requirements</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div
+                class="notification has-text-left has-background-grey content"
+              >
+                <nav class="buttons is-right">
+                  <button class="button is-danger is-rounded">
+                    <i class="fas fa-align-right"></i>
+                    <span>League Page</span>
+                  </button>
+                </nav>
+                <ul class="has-text-white">
+                  <li>Registration Deadline</li>
+                  <li>
+                    Two columns defined, but need to format button to wrap text
+                    properly
+                  </li>
+                  <li>
+                    Later on we can add Javascript to make them editable by
+                    users
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--Don't insert any further code here-->
+      </div>
+    </section>
+    <script type="text/javascript" src="../scripts/hamburger-menu.js"></script>
+  </body>
+</html>

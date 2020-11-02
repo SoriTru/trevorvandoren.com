@@ -1,18 +1,87 @@
-function validatePassword() {
-    let password = document.getElementById("password").value;
-    if (password === document.getElementById("confirm-password").value) {
-        // passwords match, so create user
-        let username = document.getElementById("username").value
-        // TODO: implement more logical checks on username/password
-        if (email.length < 4) {
-            alert('Please enter an email address.');
-            return;
-        }
-        if (password.length < 4) {
-            alert('Please enter a password.');
-            return;
-        }
-    }
+function handleAuth() {
+  // retrieve email/password data
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+
+  document.getElementById("sign-in-toggle").innerText !== "Log in"
+    ? this.handleLogIn(email, password)
+    : this.handleSignUp(email, password);
 }
 
-function
+function handleLogIn(email, password) {
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .catch(function(error) {
+      // TODO: alert the user to these properly
+      console.log(error.code);
+      console.log(error.message);
+    });
+}
+
+function handleSignUp(email, password) {
+  //check that the passwords match
+  if (password === document.getElementById("confirm-password").value) {
+    // check that email and password is long enough
+    //TODO: make good requirements for email/password
+    if (email.length < 4) {
+      alert("Email not valid!");
+      return;
+    } else if (password.length < 4) {
+      alert("Password not valid");
+      return;
+    }
+
+    // at this point email and password should be checked
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .catch(function(error) {
+        // Handle Errors here.
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        if (errorCode === "auth/wrong-password") {
+          alert("Wrong password.");
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+        document.getElementById("quickstart-sign-in").disabled = false;
+      });
+  } else {
+    // passwords don't match, so alert user and return
+    // TODO: clear password fields if this happens
+    alert("Passwords do not match!");
+    return;
+  }
+}
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    alert("You signed up! Logging you out.");
+    firebase.auth().signOut();
+  } else {
+    alert("Not signed in");
+  }
+});
+
+function toggleLogIn() {
+  let isLogIn =
+    document.getElementById("sign-in-toggle").innerText === "Log in";
+
+  document.getElementById("sign-in-toggle").innerText = isLogIn
+    ? "Sign up"
+    : "Log in";
+
+  if (isLogIn) {
+    // button is set to log in, so form should switch to user log in
+    document.getElementById("auth-title-text").innerText = "Log in";
+    document.getElementById("confirm-pw-field").hidden = true;
+    document.getElementById("terms-field").hidden = true;
+  } else {
+    // button is set to sign up, so form should switch to user sign up
+    document.getElementById("auth-title-text").innerText = "Sign up";
+    document.getElementById("confirm-pw-field").hidden = false;
+    document.getElementById("terms-field").hidden = false;
+  }
+}
