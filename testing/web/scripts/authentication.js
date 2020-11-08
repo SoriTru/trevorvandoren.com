@@ -12,7 +12,7 @@ function handleLogIn(email, password) {
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
-    .catch(function(error) {
+    .catch(function (error) {
       // TODO: alert the user to these properly
       console.log(error.code);
       console.log(error.message);
@@ -36,7 +36,7 @@ function handleSignUp(email, password) {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .catch(function(error) {
+      .catch(function (error) {
         // Handle Errors here.
         let errorCode = error.code;
         let errorMessage = error.message;
@@ -56,12 +56,17 @@ function handleSignUp(email, password) {
   }
 }
 
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    alert("You signed up! Logging you out.");
-    firebase.auth().signOut();
+    // navigate to school from log in page
+    if (!window.location.href.includes("page")) {
+      window.location.href = "./school-page/index.html";
+    }
   } else {
-    alert("Not signed in");
+    // navigate to log in page on sign out
+    if (window.location.href.includes("page")) {
+      window.location.href = "../index.html";
+    }
   }
 });
 
@@ -84,4 +89,8 @@ function toggleLogIn() {
     document.getElementById("confirm-pw-field").hidden = false;
     document.getElementById("terms-field").hidden = false;
   }
+}
+
+function logOut() {
+  firebase.auth().signOut();
 }

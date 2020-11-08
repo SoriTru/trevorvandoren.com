@@ -8,8 +8,8 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"
     />
     <link rel="stylesheet" href="styles/main.css" />
-    <!-- TODO: correct name once it's decided on -->
-    <title>IM Rework</title>
+    <title>Parrot IM</title>
+    <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
   </head>
   <body>
     <nav
@@ -18,10 +18,12 @@
       aria-label="main navigation"
     >
       <div class="navbar-brand">
-        <!-- TODO: make link point to home page -->
+        <figure class="image is-48x48">
+          <img src="./images/im-logo.jpg" />
+        </figure>
+
         <a class="navbar-item" href="#">
-          <!-- TODO: correct name once it's decided on -->
-          <strong>Insert Name</strong>
+          <strong>Parrot IM</strong>
         </a>
         <a
           role="button"
@@ -53,7 +55,7 @@
       </div>
     </nav>
     <section class="section">
-      <div class="container ">
+      <div class="container">
         <div class="columns is-centered">
           <div class="column is-one-third">
             <div class="box">
@@ -119,7 +121,7 @@
         projectId: "im-rework",
         storageBucket: "im-rework.appspot.com",
         messagingSenderId: "954513286314",
-        appId: "1:954513286314:web:cca4a9064e97a1b5625cd3"
+        appId: "1:954513286314:web:cca4a9064e97a1b5625cd3",
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);

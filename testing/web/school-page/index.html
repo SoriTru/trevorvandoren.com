@@ -7,10 +7,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/debug.css" />
-    <!-- TODO: correct name once it's decided on -->
-    <title>IM Rework</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <title>Parrot IM</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.png" />
   </head>
   <body>
     <nav
@@ -19,11 +18,14 @@
       aria-label="main navigation"
     >
       <div class="navbar-brand">
-        <!-- TODO: make link point to home page -->
-        <a class="navbar-item" href="#">
-          <!-- TODO: correct name once it's decided on -->
-          <strong>Insert Name</strong>
+        <figure class="image is-48x48">
+          <img src="../images/im-logo.jpg" />
+        </figure>
+
+        <a class="navbar-item" href="../school-page/index.html">
+          <strong>Parrot IM</strong>
         </a>
+
         <a
           role="button"
           class="navbar-burger burger"
@@ -41,7 +43,7 @@
         <div class="navbar-end">
           <!-- navigation dropdown -->
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link"> Pages </a>
+            <a class="navbar-link">School</a>
             <div class="navbar-dropdown">
               <a href="../league-page/index.html" class="navbar-item">
                 League
@@ -56,9 +58,9 @@
               <button
                 id="sign-in-toggle"
                 class="button is-light"
-                onclick="toggleLogIn()"
+                onclick="logOut()"
               >
-                Log in
+                Log out
               </button>
             </div>
           </div>
@@ -208,6 +210,26 @@
         <!--Don't insert any further code here-->
       </div>
     </section>
+    <!-- Firebase stuff -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-auth.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBHIHX8IdRgsvJJWoFIy7tBS7TpC-Sn71w",
+        authDomain: "im-rework.firebaseapp.com",
+        databaseURL: "https://im-rework.firebaseio.com",
+        projectId: "im-rework",
+        storageBucket: "im-rework.appspot.com",
+        messagingSenderId: "954513286314",
+        appId: "1:954513286314:web:cca4a9064e97a1b5625cd3",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
     <script type="text/javascript" src="../scripts/hamburger-menu.js"></script>
+    <script type="text/javascript" src="../scripts/authentication.js"></script>
   </body>
 </html>
