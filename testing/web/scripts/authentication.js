@@ -3,7 +3,7 @@ function handleAuth() {
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
 
-  document.getElementById("sign-in-toggle").innerText !== "Log in"
+  document.getElementById("sign-in-toggle").innerText.trim() !== "Log in"
     ? this.handleLogIn(email, password)
     : this.handleSignUp(email, password);
 }
@@ -61,6 +61,12 @@ firebase.auth().onAuthStateChanged(function (user) {
     // navigate to school from log in page
     if (!window.location.href.includes("page")) {
       window.location.href = "./school-page/index.html";
+    }
+    // load appropriate page info
+    if (window.location.href.includes("school-page")) {
+      getSchoolInfo();
+    } else if (window.location.href.includes("league-page")) {
+      getLeagueInfo();
     }
   } else {
     // navigate to log in page on sign out
