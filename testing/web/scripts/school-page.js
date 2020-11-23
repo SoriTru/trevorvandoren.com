@@ -43,6 +43,7 @@ function getSchoolInfo() {
               // add announcements to lists
               for (let date of announcementDates) {
                 let li = document.createElement("li");
+                li.style.color = "#fff";
                 li.appendChild(
                   document.createTextNode(`${date}: ${announcements[date]}`)
                 );
@@ -67,8 +68,8 @@ function getSchoolInfo() {
                 let leagueDiv = document.createElement("div");
 
                 let backgroundColor = backgroundIsDark
-                  ? "has-background-dark"
-                  : "has-background-grey";
+                  ? "alternating-color-one"
+                  : "alternating-color-two";
                 backgroundIsDark = !backgroundIsDark;
 
                 leagueDiv.className = "container " + backgroundColor + " mb-5";
@@ -101,7 +102,7 @@ function getSchoolInfo() {
                   "                >\n" +
                   '                  <nav class="buttons is-right">\n' +
                   "                    <button\n" +
-                  '                      class="button is-warning is-rounded"\n' +
+                  '                      class="button is-rounded" style="background-color: #eadb68"\n' +
                   buttonClick +
                   "                    >\n" +
                   "                      League Page\n" +
