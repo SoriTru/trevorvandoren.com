@@ -73,6 +73,7 @@ function getLeagueInfo() {
 
             // set up win/loss ratio dictionary
             let winLossDict = {};
+            let keepVisible = false;
             for (let team in leagueData.teams) {
               // calculate win/loss ratio for each team
               winLossDict[team] =
@@ -85,6 +86,7 @@ function getLeagueInfo() {
                 // make team button visible
                 let teamButton = document.getElementById("edit-team-link");
                 teamButton.style.visibility = "visible";
+                keepVisible = true;
 
                 if (leagueData.teams[team].teamCaptain === userID) {
                   // if user is admin, allow deletion of team
@@ -109,7 +111,7 @@ function getLeagueInfo() {
                   nextMatchTeam +
                   " on " +
                   nextMatch[nextMatchTeam];
-              } else {
+              } else if (!keepVisible) {
                 document.getElementById("team-name").innerText = "";
                 document.getElementById("edit-team-link").style.visibility =
                   "hidden";
