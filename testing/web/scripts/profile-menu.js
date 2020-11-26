@@ -103,6 +103,10 @@ function setMenuView(menuChoice) {
                 "  </div>\n" +
                 "</div>";
             });
+        })
+        .catch(function (error) {
+          console.error(error);
+          alert("Must add school first!");
         });
 
       break;
@@ -287,8 +291,6 @@ function addSchool() {
             let currentList = doc.data().school_list;
             currentList[schoolNameDict[chosenSchool]] = email;
 
-            console.log(currentList);
-
             // record school key in user schools
             db.collection("user_data")
               .doc(userID)
@@ -312,7 +314,10 @@ function addSchool() {
                   // no document to update, so document must first be set
                   db.collection("user_data")
                     .doc(userID)
-                    .set({ school_list: currentList });
+                    .set({ school_list: currentList })
+                    .then(function () {
+                      alert("School added!");
+                    });
                 });
             } else {
               console.error(error);

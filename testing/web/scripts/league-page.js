@@ -181,7 +181,7 @@ function leaveTeam(school, league, team, uid) {
       [`leagues.${league}.teams.${team}.members.${uid}`]: firebase.firestore.FieldValue.delete(),
     })
     .then(function () {
-      window.location.href = "./index.html";
+      this.getLeagueInfo();
     });
 }
 
