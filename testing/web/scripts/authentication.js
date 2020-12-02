@@ -13,9 +13,11 @@ function handleLogIn(email, password) {
     .auth()
     .signInWithEmailAndPassword(email, password)
     .catch(function (error) {
-      // TODO: alert the user to these properly
-      console.log(error.code);
-      console.log(error.message);
+      if (error.code === "auth/wrong-password") {
+        alert("Incorrect Password!");
+      }
+      console.error(error.code);
+      console.error(error.message);
     });
 }
 
