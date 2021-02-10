@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: free-document-generator.com
-Token: d23ae1bb6f61c9e745c10dd86f521f439e157e4f035af5ba6158675f826f8a9e
