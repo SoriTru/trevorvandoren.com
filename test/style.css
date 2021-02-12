@@ -1,0 +1,48 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.clockdiv {
+  font-family: sans-serif;
+  color: #fff;
+  display: block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 46px;
+}
+
+.numbers {
+  font-size: 1em;
+  color: black;
+  padding: 15px;
+  border-radius: 3px;
+  background: inherit;
+  display: inline-block;
+}
+
+.countdown-container {
+  padding: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.clock-label {
+  padding-top: 5px;
+  font-size: 0.5em;
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .clockdiv > div > span {
+    font-size: 6.5vw;
+  }
+
+  .clockdiv > div {
+    padding: 2vw;
+  }
+
+  .clock-label {
+    font-size: 3vw;
+  }
+}
