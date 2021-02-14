@@ -38,67 +38,53 @@
     </style>
     <script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0/build/global/luxon.min.js"></script>
     <script>
-      let DateTime = luxon.DateTime;
-
+      const { DateTime, Interval } = luxon;
       function updateTime() {
         setInterval(calculateTime, 1000);
       }
 
       function calculateTime() {
-        // Kilgore is in the same time zone as Chicago
-        let kilgoreTexasTime = DateTime.fromObject({
-          zone: "America/Chicago",
+        const UNITS = ["days", "hours", "minutes", "seconds"]; // element IDs and also luxon time units
+
+        let nowInKilgore = DateTime.fromObject({
+          zone: "America/Chicago", // Kilgore is in the same time zone as Chicago
         });
 
-        // livestream is happening, so don't set timer
-        if (
-          kilgoreTexasTime.weekday === 7 &&
-          ([10, 11].includes(kilgoreTexasTime.hour) ||
-            (kilgoreTexasTime.hour >= 9 && kilgoreTexasTime.minute >= 45))
-        ) {
-          document.getElementById("days").innerText = "00";
-          document.getElementById("hours").innerText = "00";
-          document.getElementById("minutes").innerText = "00";
-          document.getElementById("seconds").innerText = "00";
+        // Livestream starts at 9:45 (America/Chicago) on Sundays
+        let serviceStart = DateTime.fromObject({
+          zone: "America/Chicago",
+        })
+          .endOf("week")
+          .startOf("day")
+          .plus({ hours: 9, minutes: 45 });
+        // Livestream is 1hr15min long
+        const serviceInterval = Interval.after(serviceStart, {
+          hours: 1,
+          minutes: 15,
+        });
+
+        if (serviceInterval.contains(nowInKilgore)) {
+          // Livestream is happening, so just show zeros for the time
+          UNITS.forEach((elemId) => {
+            document.getElementById(elemId).innerText = "00";
+          });
         } else {
-          let livestreamStart = DateTime.fromObject({ zone: "America/Chicago" })
-            .endOf("week")
-            .startOf("day")
-            .plus({ hours: 9, minutes: 45 });
-          // Livestream starts at 9:45 (America/Chicago) on Sundays
-          // set livestream to be next week if today is Sunday and it has already started
-          if (kilgoreTexasTime.toMillis() > livestreamStart.toMillis()) {
-            livestreamStart = livestreamStart.plus({ days: 7 });
+          // The service is not in progress
+          if (nowInKilgore > serviceStart) {
+            // It's Sunday, but today's service is over, so set to next Sunday
+            serviceStart = serviceStart.plus({ days: 7 });
           }
 
-          livestreamStart.set({ hour: 9, minute: 45, second: 0 });
+          // Get the Duration to next service start, with the units we care about
+          const toNextStart = serviceStart.diff(nowInKilgore, UNITS).toObject();
 
-          let timeDifference =
-            livestreamStart.toMillis() - kilgoreTexasTime.toMillis();
-
-          let numDays = Math.floor(timeDifference / (1000 * 3600 * 24));
-          let remainder = timeDifference % (1000 * 3600 * 24);
-
-          let numHours = Math.floor(remainder / (1000 * 3600));
-          remainder = remainder % (1000 * 3600);
-
-          let numMinutes = Math.floor(remainder / (1000 * 60));
-          remainder = remainder % (1000 * 60);
-
-          let numSeconds = Math.floor(remainder / 1000);
-
-          numDays = "0" + String(numDays);
-          numHours = String(numHours);
-          numHours = numHours.length < 2 ? "0" + numHours : numHours;
-          numMinutes = String(numMinutes);
-          numMinutes = numMinutes.length < 2 ? "0" + numMinutes : numMinutes;
-          numSeconds = String(numSeconds);
-          numSeconds = numSeconds.length < 2 ? "0" + numSeconds : numSeconds;
-
-          document.getElementById("days").innerText = numDays;
-          document.getElementById("hours").innerText = numHours;
-          document.getElementById("minutes").innerText = numMinutes;
-          document.getElementById("seconds").innerText = numSeconds;
+          // Update UI for each time unit
+          UNITS.forEach((unitName) => {
+            document.getElementById(unitName).innerText = toNextStart[unitName]
+              .toString()
+              .split(".")[0] // don't show fractional seconds
+              .padStart(2, "0"); // keep two digits for each unit
+          });
         }
       }
     </script>
