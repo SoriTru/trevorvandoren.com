@@ -38,22 +38,18 @@
     </style>
     <script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0/build/global/luxon.min.js"></script>
     <script>
-      const { DateTime, Interval } = luxon;
       function updateTime() {
         setInterval(calculateTime, 1000);
       }
 
-      function calculateTime() {
-        const UNITS = ["days", "hours", "minutes", "seconds"]; // element IDs and also luxon time units
+      const { DateTime, Interval } = luxon;
 
-        let nowInKilgore = DateTime.fromObject({
-          zone: "America/Chicago", // Kilgore is in the same time zone as Chicago
-        });
+      function calculateTime() {
+        const UnitsOfTime = ["days", "hours", "minutes", "seconds"]; // element IDs and also luxon time units
 
         // Livestream starts at 9:45 (America/Chicago) on Sundays
-        let serviceStart = DateTime.fromObject({
-          zone: "America/Chicago",
-        })
+        // Kilgore is in the same time zone as Chicago
+        let serviceStart = DateTime.fromObject({ zone: "America/Chicago" })
           .endOf("week")
           .startOf("day")
           .plus({ hours: 9, minutes: 45 });
@@ -63,29 +59,35 @@
           minutes: 15,
         });
 
-        if (serviceInterval.contains(nowInKilgore)) {
-          // Livestream is happening, so just show zeros for the time
-          UNITS.forEach((elemId) => {
-            document.getElementById(elemId).innerText = "00";
-          });
-        } else {
-          // The service is not in progress
-          if (nowInKilgore > serviceStart) {
-            // It's Sunday, but today's service is over, so set to next Sunday
-            serviceStart = serviceStart.plus({ days: 7 });
-          }
+        // Compare to what time it currently is in Kilgore
+        let nowInKilgore = DateTime.fromObject({ zone: "America/Chicago" });
 
-          // Get the Duration to next service start, with the units we care about
-          const toNextStart = serviceStart.diff(nowInKilgore, UNITS).toObject();
+        if (nowInKilgore > serviceStart) {
+          // It's Sunday, but today's service is over, so set to next Sunday
+          serviceStart = serviceStart.plus({ days: 7 });
+        }
 
-          // Update UI for each time unit
-          UNITS.forEach((unitName) => {
-            document.getElementById(unitName).innerText = toNextStart[unitName]
+        // Get the Duration to next service start, with the units we care about
+        const toNextStart = serviceStart
+          .diff(nowInKilgore, UnitsOfTime)
+          .toObject();
+
+        // Update UI for each time unit
+        UnitsOfTime.forEach((elemId) => {
+          let elemText;
+          if (serviceInterval.contains(nowInKilgore)) {
+            // Livestream is happening, so just show zeros for the time
+            elemText = "00";
+          } else {
+            // Livestream isn't happening, so show time until next start
+            elemText = toNextStart[elemId]
               .toString()
               .split(".")[0] // don't show fractional seconds
               .padStart(2, "0"); // keep two digits for each unit
-          });
-        }
+          }
+
+          document.getElementById(elemId).innerText = elemText;
+        });
       }
     </script>
   </head>
