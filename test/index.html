@@ -36,33 +36,45 @@
         color: black;
       }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0/build/global/luxon.min.js"></script>
     <script>
+      let DateTime = luxon.DateTime;
+
       function updateTime() {
         setInterval(calculateTime, 1000);
       }
 
       function calculateTime() {
-        let currentDate = new Date();
+        // Kilgore is in the same time zone as Chicago
+        let kilgoreTexasTime = DateTime.fromObject({
+          zone: "America/Chicago",
+        });
+
         // livestream is happening, so don't set timer
         if (
-          currentDate.getDay() === 0 &&
-          currentDate.getHours() >= 9 &&
-          currentDate.getMinutes() >= 30 &&
-          [9, 10, 11].includes(currentDate.getHours())
+          kilgoreTexasTime.weekday === 7 &&
+          ([10, 11].includes(kilgoreTexasTime.hour) ||
+            (kilgoreTexasTime.hour >= 9 && kilgoreTexasTime.minute >= 45))
         ) {
           document.getElementById("days").innerText = "00";
           document.getElementById("hours").innerText = "00";
           document.getElementById("minutes").innerText = "00";
           document.getElementById("seconds").innerText = "00";
         } else {
-          // get number of days until Sunday
-          let sunday = new Date();
-          sunday.setDate(currentDate.getDate() + (7 - currentDate.getDay()));
-          sunday.setHours(9);
-          sunday.setMinutes(30);
-          sunday.setSeconds(0);
+          let livestreamStart = DateTime.fromObject({ zone: "America/Chicago" })
+            .endOf("week")
+            .startOf("day")
+            .plus({ hours: 9, minutes: 45 });
+          // Livestream starts at 9:45 (America/Chicago) on Sundays
+          // set livestream to be next week if today is Sunday and it has already started
+          if (kilgoreTexasTime.toMillis() > livestreamStart.toMillis()) {
+            livestreamStart = livestreamStart.plus({ days: 7 });
+          }
 
-          let timeDifference = sunday.getTime() - currentDate.getTime();
+          livestreamStart.set({ hour: 9, minute: 45, second: 0 });
+
+          let timeDifference =
+            livestreamStart.toMillis() - kilgoreTexasTime.toMillis();
 
           let numDays = Math.floor(timeDifference / (1000 * 3600 * 24));
           let remainder = timeDifference % (1000 * 3600 * 24);
