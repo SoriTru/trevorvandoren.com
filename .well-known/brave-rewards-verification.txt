@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: trevorvandoren.com
+Token: 933bad3e5d383b26337e4df4d8a49b82961b0fce3580fda89f57b9e75b6ab164
