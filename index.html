@@ -13,6 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
     <h1>Trevor VanDoren</h1>
@@ -147,10 +148,28 @@
         <label for="message">Message:</label>
         <textarea id="message" name="message" required></textarea>
       </li>
+      <li>
+        <div
+          class="g-recaptcha"
+          data-sitekey="6LdjgWIaAAAAAB0UrVUKUON50tKxyq0yZgl6ilZi"
+        ></div>
+      </li>
       <li style="text-align: center">
-        <button type="submit" class="button">Send message</button>
+        <button type="button" onclick="verifyForm()" class="button">
+          Send message
+        </button>
       </li>
     </ul>
   </form>
   <h5>&copy; 2020 Trevor VanDoren</h5>
+  <script>
+    function verifyForm() {
+      let form = document.getElementById("form");
+      if (form.reportValidity() && grecaptcha.getResponse() != "") {
+        form.submit();
+      } else {
+        form.reset();
+      }
+    }
+  </script>
 </html>
