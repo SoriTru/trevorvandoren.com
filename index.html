@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
-  <body>
+  <body onload="setCopyright()">
     <h1>Trevor VanDoren</h1>
     <nav>
       <a href="#about">About</a>
@@ -161,7 +161,7 @@
       </li>
     </ul>
   </form>
-  <h5>&copy; 2021 Trevor VanDoren</h5>
+  <h5 id="copyright"></h5>
   <script>
     function verifyForm() {
       let form = document.getElementById("form");
@@ -170,6 +170,12 @@
       } else {
         form.reset();
       }
+    }
+
+    function setCopyright() {
+      let now = new Date();
+      document.getElementById("copyright").innerText =
+        "\251 " + now.getFullYear() + " Trevor VanDoren";
     }
   </script>
 </html>
