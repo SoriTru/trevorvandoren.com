@@ -12,26 +12,6 @@ body {
   background-color: #eeeeee;
 }
 
-nav {
-  overflow: hidden;
-  background-color: lightgrey;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: center;
-}
-
-nav a {
-  padding: 0.8rem 1.2rem;
-  color: #222222;
-  text-decoration: none;
-}
-
-nav a:hover {
-  background-color: grey;
-}
-
 h1,
 h2,
 h5 {
@@ -47,49 +27,6 @@ h5 {
   font-size: inherit;
 }
 
-form {
-  margin: 0 auto;
-  max-width: 25rem;
-  padding: 1em;
-  border: 1px solid #ccc;
-  border-radius: 1em;
-}
-
-form li + li {
-  margin-top: 1em;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-label {
-  display: inline-block;
-  width: 90px;
-  text-align: left;
-}
-
-input,
-textarea {
-  font: 1em sans-serif;
-  width: 100%;
-  border: 1px solid #999;
-}
-
-textarea {
-  vertical-align: top;
-  height: 5rem;
-}
-
-.button {
-  padding: 1rem 2rem;
-  background-color: transparent;
-  border: 1px solid #999;
-  border-radius: 1rem;
-}
-
 .fa {
   color: #2b2b2b;
   font-size: 150%;
@@ -98,13 +35,6 @@ textarea {
 
 .profile-image {
   width: 250px;
-  padding: 20px;
-  border-radius: 50%;
-}
-
-.gutter-image {
-  width: 90%;
-  max-width: 350px;
   padding: 20px;
   border-radius: 50%;
 }
